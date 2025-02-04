@@ -1,10 +1,54 @@
 @import "variables.scss";
+
+body {
+  background: $body-bg-gradient;
+}
+
 .btn-primary {
   background: $btn-primary-bg;
   transition: ease 0.5s all;
+  position: relative;
+  border-radius: 84px;
   border: none;
+  padding: 15px 50px;
+  font-weight: 700;
+  font-size: 17.451px;
+  line-height: 109.5%;
+
+  color: #ffffff;
+
   &:hover {
-    background: $btn-primary-bg-hover;
     transition: ease 0.5s all;
+    background: transparent;
+    outline: none;
+    @include text-gradient;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 84px;
+    padding: 4px;
+    background: $btn-primary-bg;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+  }
+}
+
+.nav-link {
+  @include text-gradient;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &:hover {
+    @include text-gradient;
+  }
+  &::after {
+    content: "";
+    display: block;
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background: $primary-gradient;
   }
 }
