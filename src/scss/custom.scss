@@ -1,0 +1,10 @@
+@import "variables.scss";
+.btn-primary {
+  background: $btn-primary-bg;
+  transition: ease 0.5s all;
+  border: none;
+  &:hover {
+    background: $btn-primary-bg-hover;
+    transition: ease 0.5s all;
+  }
+}
