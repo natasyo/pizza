@@ -30,15 +30,21 @@ body {
     border-radius: 84px;
     padding: 4px;
     background: $btn-primary-bg;
-    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
     mask-composite: exclude;
   }
 }
 
+.navbar-toggler {
+  background: $btn-primary-bg;
+}
 .nav-link {
   @include text-gradient;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   &:hover {
     @include text-gradient;
@@ -49,6 +55,23 @@ body {
     height: 6px;
     width: 6px;
     border-radius: 50%;
-    background: $primary-gradient;
+    background: transparent;
+    margin-top: 8px;
+  }
+  &:hover,
+  &.active {
+    @include text-gradient;
+    &::after {
+      background: $primary-gradient;
+    }
+  }
+}
+
+.navbar-brand {
+  font-size: 34px;
+  font-weight: 900;
+  @include text-gradient;
+  &:hover {
+    @include text-gradient;
   }
 }
