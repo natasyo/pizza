@@ -6,7 +6,7 @@ $btn-primary-bg: $primary-gradient;
 $btn-primary-bg-hover: linear-gradient(-261.48deg, #fe9c1c -17.13%, #ff5e2a 86.76%);
 
 $nav-link-font-size: 17px;
-
+$navbar-bg-collapse: rgba(30, 12, 0, 1);
 @mixin text-gradient {
   background: $primary-gradient;
   -webkit-background-clip: text;

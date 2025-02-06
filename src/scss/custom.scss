@@ -36,9 +36,34 @@ body {
     mask-composite: exclude;
   }
 }
-
-.navbar-toggler {
-  background: $btn-primary-bg;
+.navbar {
+  &-toggler {
+    background: $btn-primary-bg;
+  }
+  &-brand {
+    font-size: 34px;
+    font-weight: 900;
+    @include text-gradient;
+    &:hover {
+      @include text-gradient;
+    }
+  }
+  @media (max-width: 991px) {
+    &-collapse {
+      position: fixed;
+      right: -100%;
+      width: 350px;
+      max-width: 100%;
+      padding: 28px 0;
+      height: 100%;
+      top: 0;
+      z-index: 999;
+      background: $navbar-bg-collapse; /* Тёмно-серый фон */
+      &.show {
+        right: 0;
+      }
+    }
+  }
 }
 .nav-link {
   @include text-gradient;
@@ -67,11 +92,13 @@ body {
   }
 }
 
-.navbar-brand {
-  font-size: 34px;
-  font-weight: 900;
-  @include text-gradient;
-  &:hover {
-    @include text-gradient;
-  }
+h1,
+.h1 {
+  font-family: "Muller";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 69.1697px;
+  line-height: 109.5%;
+  color: #ffffff;
+  font-family: $font-family-base;
 }
